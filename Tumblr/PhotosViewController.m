@@ -80,14 +80,6 @@
         // 3. Get the url string from the original size dictionary
         NSString *urlString = originalSize[@"url"];
         
-        // NSLog(@"%@", originalSize[@"height"]);
-        // NSLog(@"%@", originalSize[@"width"]);
-        
-        
-        // original height/width = new height/width
-        // new width * original height/width
-        
-        
         int originalHeight = [originalSize[@"height"] intValue];
         int originalWidth = [originalSize[@"width"] intValue];
         
@@ -95,27 +87,15 @@
         
         int rowHeight = self.phoneView.bounds.size.width * originalHeight / originalWidth;
         
-        // NSLog(@"%i", rowHeight);
-        
-        
-        
-        // NSInteger imageHeight = originalSize[@"height"];
         self.tableView.rowHeight = rowHeight;
         
         
-
         // 4. Create a URL using the urlString
         NSURL *url = [NSURL URLWithString:urlString];
         
         [cell.photoView setImageWithURL:url];
-        
-        // [self.tableView reloadData];
-        // self.tableView.rowHeight = 300;
+
     }
-    else {
-        // we will figure this out later
-    }
-    
 
     return cell;
 }
