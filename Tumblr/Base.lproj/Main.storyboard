@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A32-XF-jKJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A32-XF-jKJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="217" id="fHu-vO-YXv" customClass="PhotoCell">
@@ -28,11 +27,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Und-fF-79r">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Und-fF-79r">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="217" id="53F-Q1-m2f"/>
+                                                        <constraint firstAttribute="width" constant="414" id="gK7-7s-Cw5"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Und-fF-79r" firstAttribute="leading" secondItem="e1Q-2q-x1P" secondAttribute="leading" id="4Qp-S5-E26"/>
+                                                <constraint firstAttribute="bottom" secondItem="Und-fF-79r" secondAttribute="bottom" id="KP7-vP-4AV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Und-fF-79r" secondAttribute="trailing" id="tNI-5Y-MLe"/>
+                                                <constraint firstItem="Und-fF-79r" firstAttribute="top" secondItem="e1Q-2q-x1P" secondAttribute="top" id="ucA-No-odI"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoView" destination="Und-fF-79r" id="JrY-le-F3P"/>
@@ -42,9 +50,16 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A32-XF-jKJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GWf-iQ-XlU"/>
+                            <constraint firstItem="A32-XF-jKJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="STT-XH-JlJ"/>
+                            <constraint firstAttribute="bottom" secondItem="A32-XF-jKJ" secondAttribute="bottom" id="bVV-CV-4P6"/>
+                            <constraint firstItem="A32-XF-jKJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kV9-DB-vgE"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="phoneView" destination="8bC-Xf-vdC" id="iSg-sL-Fsi"/>
                         <outlet property="tableView" destination="A32-XF-jKJ" id="ooO-8W-bhW"/>
                     </connections>
                 </viewController>
